@@ -218,7 +218,7 @@
                 <h2 style:"text-align: center;" class="title is-3">Experiments</h2><br />
                   <div class="item">
                       <h2 class="subtitle;columns is-centered">
-                        <br/>Our framework can be flexibly applied to into various tasks and LMs.<br/>
+                        <p>Our framework can be flexibly applied to into various tasks and LMs.</p>
                         In this work, we spotlight its utility by focusing on three key applications: <b>summarization</b>, <b>dialogue response generation</b>, and <b>chain-of-thought reasoning</b>, which encompasses <b>automatic prompt engineering/optimization</b>.
                         We experiment with the black-box LLMs including <b>OpenAI's ChatGPT (gpt-3.5-turbo), Codex (code-davinci-002), and InstructGPT (text-davinci-002)</b>, and use pre-trained <b>T5 or Flan-T5</b> to initialize the policy model.
                         <br /><br/>
@@ -229,17 +229,20 @@
                       <h2 class="subtitle;columns is-centered">
                         Figure 3: Performance comparison of ChatGPT with standard prompting and DSP trained with SFT
                         and SFT+RL, using varying numbers of training samples from the CNN/Daily Mail dataset.
+                        All the evaluation scores improve with our proposed DSP compared with standard prompting. 
+                        Supervised fine-tuning (SFT) improves the benchmark performance, while additional <b>RL</b> results in further performance improvement, as it effectively encourages the policy model to explore better directional stimulus that maximizes the reward. 
+                        Despite using a small collection of only 1,000 to 4,000 samples to keep API usage costs low, our DSP approach still consistently enhances ChatGPT's ROUGE, BLEU, and Meteor scores,  even though ChatGPT has already achieved considerable performance.
                       </h2>
                   </div>
               </div>
           </div>
-          <div class="column is-fifths-fifths">
+          <!-- <div class="column is-fifths-fifths">
             <p style="margin-left: 2em;margin-right: 2em;"><br />All the evaluation scores improve with our proposed DSP compared with standard prompting. 
               Supervised fine-tuning (SFT) improves the benchmark performance, while additional <b>RL</b> results in further performance improvement, as it effectively encourages the policy model to explore better directional stimulus that maximizes the reward. 
               Despite using a small collection of only 1,000 to 4,000 samples to keep API usage costs low, our DSP approach still consistently enhances ChatGPT’s ROUGE, BLEU, and Meteor scores,  even though ChatGPT has already achieved considerable performance.</p>
               <br/>
             </p>
-        </div>
+        </div> -->
         <div class="columns is-centered">
           <div class="column has-text-centered is-fifths-fifths">
                 <div class="item">
