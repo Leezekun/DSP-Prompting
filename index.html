@@ -300,101 +300,14 @@
               <div class="item">
                 <h2 class="subtitle;"><b>2. Dialogue Response Generation</b><br/><br/></h2>
                 <!-- Your image here -->
-                <img src="static/images/table1.png" alt="table1.png" />
+                <img src="static/images/table1.png" alt="table1.png" width="500" />
                 <h2 class="subtitle;columns is-centered">
                   Table 1: Response generation performance of different methods on the MultiWOZ 2.0&2.1 datasets, 
                   where Succ. and Comb. denote the Success and Combined Score metrics, respectively.
                 </h2>
               </div>
             </div>
-          </div>
-          <table>
-            <caption>Response generation performance of different methods on the MultiWOZ 2.0&2.1 datasets, where Succ. and Comb. denote the Success and Combined Score metrics, respectively.</caption>
-            <thead>
-              <tr>
-                <th rowspan="2"><strong>Method</strong></th>
-                <th rowspan="2">#Training data</th>
-                <th colspan="4">MultiWOZ 2.0</th>
-                <th colspan="4">MultiWOZ 2.1</th>
-              </tr>
-              <tr>
-                <th>Inform</th>
-                <th>Succ.</th>
-                <th>BLEU</th>
-                <th>Comb.</th>
-                <th>Inform</th>
-                <th>Succ.</th>
-                <th>BLEU</th>
-                <th>Comb.</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="background-color:Gray;">
-                <td colspan="10"><em><strong>Codex</strong></em></td>
-              </tr>
-              <tr>
-                <td>Standard Prompting</td>
-                <td>-</td>
-                <td>76.7</td>
-                <td>41.5</td>
-                <td>7.7</td>
-                <td>66.8</td>
-                <td>74.2</td>
-                <td>41.9</td>
-                <td>7.8</td>
-                <td>65.9</td>
-              </tr>
-              <tr>
-                <td>DSP w/ SFT</td>
-                <td>1% (80)</td>
-                <td>74.9</td>
-                <td>66.3</td>
-                <td>11.1</td>
-                <td>81.7</td>
-                <td>72.0</td>
-                <td>66.0</td>
-                <td>11.3</td>
-                <td>80.1</td>
-              </tr>
-              <!-- ... Additional rows ... -->
-              <tr>
-                <td>DSP w/ SFT+RL</td>
-                <td>1% (80)</td>
-                <td>91.0</td>
-                <td>76.0</td>
-                <td>9.8</td>
-                <td>93.3</td>
-                <td>89.7</td>
-                <td>78.6</td>
-                <td>9.4</td>
-                <td>93.4</td>
-              </tr>
-              <!-- ... Additional rows ... -->
-              <tr>
-                <td colspan="10"><em><strong>ChatGPT</strong></em></td>
-              </tr>
-              <!-- ... Additional rows ... -->
-              <tr>
-                <td>Standard Prompting</td>
-                <!-- ... Additional cells ... -->
-              </tr>
-              <!-- ... Additional rows ... -->
-              <tr>
-                <td colspan="10"><em><strong>Fully supervised TOD models</strong></em></td>
-              </tr>
-              <!-- ... Additional rows ... -->
-              <tr>
-                <td>DAMD</td>
-                <!-- ... Additional cells ... -->
-              </tr>
-              <!-- ... Additional rows ... -->
-            </tbody>
-            <tfoot>
-              <tr>
-                <td colspan="10">Bold indicates best results, underline indicates second-best.</td>
-              </tr>
-            </tfoot>
-          </table>          
+          </div>      
           <div class="column is-fifths-fifths">
             <p style="margin-left: 2em;margin-right: 2em;"><br /> Table 1 summarizes the overall performance comparison, 
               from which we obtain the following observations: <br/><br/><b>(1)</b> Our approach DSP significantly improves the
