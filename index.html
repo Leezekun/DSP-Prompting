@@ -222,8 +222,9 @@
                         In this work, we spotlight its utility by focusing on three key applications: <b>summarization</b>, <b>dialogue response generation</b>, and <b>chain-of-thought reasoning</b>, which encompasses <b>automatic prompt engineering/optimization</b>.
                         We experiment with the black-box LLMs including <b>OpenAI's ChatGPT (gpt-3.5-turbo), Codex (code-davinci-002), and InstructGPT (text-davinci-002)</b>, and use pre-trained <b>T5 or Flan-T5</b> to initialize the policy model.
                         <br /><br/>
+                        <br /><br/>
                       </h2>
-                      <h2 class="subtitle;"><b>1. Summarization</b><br/><br/></h2>
+                      <h2 class="subtitle;" style="font-size: 24px;"><b>1. Summarization</b><br/><br/></h2>
                       <!-- Your image here -->
                       <img src="static/images/cnndm_exp_chatgpt2_page-0001.jpg" alt="cnndm_exp_chatgpt2_page-0001.jpg" />
                       <h2 class="subtitle;columns is-centered">
@@ -236,14 +237,14 @@
           <div class="column is-fifths-fifths">
             <p style="margin-left: 2em;margin-right: 2em;"><br />All the evaluation scores improve with our proposed DSP compared with standard prompting. 
               Supervised fine-tuning (SFT) improves the benchmark performance, while additional <b>RL</b> results in further performance improvement, as it effectively encourages the policy model to explore better directional stimulus that maximizes the reward. 
-              Despite using a small collection of only 1,000 to 4,000 samples to keep API usage costs low, our DSP approach still consistently enhances ChatGPT’s ROUGE, BLEU, and Meteor scores,  even though ChatGPT has already achieved considerable performance.</p>
+              Despite using a small collection of only 1,000 to 4,000 samples to keep API usage costs low, our DSP approach still consistently enhances ChatGPT's ROUGE, BLEU, and Meteor scores,  even though ChatGPT has already achieved considerable performance.
+            </p>
               <br/>
             </p>
         </div>
-        <div class="columns is-centered">
+        <!-- <div class="columns is-centered">
           <div class="column has-text-centered is-fifths-fifths">
                 <div class="item">
-                    <!-- Your image here -->
                     <img src="static/images/training_curve-1000.jpg" 
                     width="400" 
                     height="300" 
@@ -253,15 +254,15 @@
                     </h2>
                 </div>
             </div>
-        </div>
-        <div class="column is-fifths-fifths">
+        </div> -->
+        <!-- <div class="column is-fifths-fifths">
           <p style="margin-left: 2em;margin-right: 2em;"><br />Figure 4 presents the change of training rewards and ROUGE-1 score on the validation set during the training
             process on 1,000 samples. We can see that the performance is closely related to the training rewards, and the training is relatively stable using the NLPO algorithm.<br/><br/>
             To gain a better understanding of generated summaries guided by keywords, we employed <b>GPT-4</b> to evaluate 
             the summaries. <br/>
             </p>
           </p>
-        </div>
+        </div> -->
         <div class="columns is-centered">
           <div class="column has-text-centered is-fifths-fifths">
                 <div class="item">
@@ -279,7 +280,8 @@
             </div>
         </div>
         <div class="column is-fifths-fifths">
-          <p style="margin-left: 2em;margin-right: 2em;"><br />We found that GPT-4 can 
+          <p style="margin-left: 2em;margin-right: 2em;"><br /> To gain a better understanding of generated summaries guided by keywords, we employed <b>GPT-4</b> to evaluate 
+            the summaries by The results are shown in Figure 4.We found that GPT-4 can 
             produce reasonable and detailed explanations of their assessment. From our test set of 500 samples: DSP-generated 
             summaries were favored 255 times (51.0%), summaries generated with original standard prompting were favored 222 
             times (44.4%), while a tie was observed in 23 cases (4.6%).
@@ -330,7 +332,7 @@
           <div class="columns is-centered">
             <div class="column has-text-centered is-fifths-fifths">
               <div class="item">
-                <h2 class="subtitle;"><b>3. Chain-of-Thought reasoning (Automatic Prompt Engineering/Optimization)</b><br/><br/></h2>
+                <h2 class="subtitle;" style="font-size: 24px;"><b>3. Chain-of-Thought reasoning (Automatic Prompt Engineering/Optimization)</b><br/><br/></h2>
                 <!-- Your image here -->
                 <img src="static/images/table2.jpg" alt="table2.jpg" />
                 <h2 class="subtitle;columns is-centered">
