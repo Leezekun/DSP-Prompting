@@ -300,7 +300,7 @@
               <div class="item">
                 <h2 class="subtitle;"><b>2. Dialogue Response Generation</b><br/><br/></h2>
                 <!-- Your image here -->
-                <img src="static/images/table1.png" alt="table1.png" width="500" />
+                <img src="static/images/table1.png" alt="table1.png" />
                 <h2 class="subtitle;columns is-centered">
                   Table 1: Response generation performance of different methods on the MultiWOZ 2.0&2.1 datasets, 
                   where Succ. and Comb. denote the Success and Combined Score metrics, respectively.
@@ -309,8 +309,13 @@
             </div>
           </div>      
           <div class="column is-fifths-fifths">
-            <p style="margin-left: 2em;margin-right: 2em;"><br /> Table 1 summarizes the overall performance comparison, 
-              from which we obtain the following observations: <br/><br/><b>(1)</b> Our approach DSP significantly improves the
+            <p style="margin-left: 2em;margin-right: 2em;"><br /> 
+              <p>There has been a rise in LLM-based chatbots such as ChatGPT, Claude, etc. However, these chatbots are typically targeted at open-domain conversations to engage with users on a wide range of topics without a specific goal in mind. 
+              However, these chatbots still face challenges in handling <b>task-oriented (goal-oriented) dialogues</b> where they need to assist users in completing specific goals or tasks, such as making reservations or ordering food. 
+              Unlike open-domain conversations, task-oriented dialogues often require the chatbot to follow task-specific business logic and respond based on reliable information from API calls or database queries.
+              To address this limitation, we train the policy model to generate <b>dialogue actions</b>, which are used to guide the LLMs in generate reliable system responses that assist users in completing tasks.</p>
+              
+              Table 1 summarizes our results, from which we obtain the following observations: <br/><br/><b>(1)</b> Our approach DSP significantly improves the
               success and inform rates of Codex and ChatGPT, indicating that they better understand the scenario
               and generate appropriate responses that help users in completing their tasks. <br/><br/><b>(2)</b> There is no
               improvement in the corpus-level BLEU score, possibly because the LLMs generate responses with
