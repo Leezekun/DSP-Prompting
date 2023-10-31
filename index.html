@@ -281,7 +281,7 @@
         </div>
         <div class="column is-fifths-fifths">
           <p style="margin-left: 2em;margin-right: 2em;"><br /> To gain a better understanding of generated summaries guided by keywords, we employed <b>GPT-4</b> to evaluate 
-            the summaries by The results are shown in Figure 4.
+            them using the prompt given below. The results are shown in Figure 4.
             We found that GPT-4 can produce reasonable and detailed explanations of their assessment. 
             From our test set of 500 samples: DSP-generated summaries were favored 255 times (51.0%), summaries generated with original standard prompting were favored 222 
             times (44.4%), while a tie was observed in 23 cases (4.6%).
@@ -308,19 +308,23 @@ Please detail your reasoning in an explanation. After your explanation, classify
             <div class="column has-text-centered is-fifths-fifths">
               <div class="item">
                 <h2 class="subtitle;" style="font-size: 24px;"><b>2. Dialogue Response Generation</b><br/><br/></h2>
-                 <p style="margin-left: 2em;margin-right: 2em;"><br />Current LLM-based chatbots such as ChatGPT and Claude are typically targeted at open-domain conversations while struggling with <b>task-oriented (goal-oriented) dialogues</b> where they need to assist users in completing specific goals or tasks, such as making reservations or ordering food. 
-                  Unlike open-domain conversations, task-oriented dialogues often require the chatbot to follow task-specific business logic and respond based on reliable information from API calls or database queries.
-                 To address this limitation, we train the policy model to generate <b>dialogue acts</b>, which are used to guide the LLMs in generate reliable system responses that assist users in completing tasks and goals.
-                  </p>
                  <!-- Your image here -->
-                <img src="static/images/table1.png" alt="table1.png" />
+                <img src="static/images/table1.png" alt="table1.png" width=700/>
                 <h2 class="subtitle;columns is-centered">
                   Table 1: Response generation performance of different methods on the MultiWOZ 2.0&2.1 datasets, 
                   where Succ. and Comb. denote the Success and Combined Score metrics, respectively.
                 </h2>
               </div>
             </div>
-          </div>      
+          </div>    
+          <div class="column is-fifths-fifths">
+            <p style="margin-left: 2em;margin-right: 2em;"><br /> 
+              Current LLM-based chatbots such as ChatGPT and Claude are typically targeted at open-domain conversations while struggling with <b>task-oriented (goal-oriented) dialogues</b> where they need to assist users in completing specific goals or tasks, such as making reservations or ordering food. 
+              Unlike open-domain conversations, task-oriented dialogues often require the chatbot to follow task-specific business logic and respond based on reliable information from API calls or database queries.
+              To address this limitation, we train the policy model to generate <b>dialogue acts</b>, which are used to guide the LLMs in generate reliable system responses that assist users in completing tasks and goals. </p>
+              <br/>
+            </p>
+          </div>  
           <div class="column is-fifths-fifths">
             <p style="margin-left: 2em;margin-right: 2em;"><br /> 
               From Table 1 we can see that our approach DSP significantly improves the success and inform rates of Codex and ChatGPT, even with only 80 dialogues, 
