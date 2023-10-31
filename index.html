@@ -218,7 +218,7 @@
                 <h2 style:"text-align: center;" class="title is-3">Experiments</h2><br />
                   <div class="item">
                       <h2 class="subtitle;columns is-centered">
-                        <p>Our framework can be flexibly applied to into various tasks and LMs.</p>
+                        <p><b>Our framework can be flexibly applied to into various tasks and LMs by selecting the appropriate directional stimulus prompts (i.e., hints) and reward functions.</b></p>
                         In this work, we spotlight its utility by focusing on three key applications: <b>summarization</b>, <b>dialogue response generation</b>, and <b>chain-of-thought reasoning</b>, which encompasses <b>automatic prompt engineering/optimization</b>.
                         We experiment with the black-box LLMs including <b>OpenAI's ChatGPT (gpt-3.5-turbo), Codex (code-davinci-002), and InstructGPT (text-davinci-002)</b>, and use pre-trained <b>T5 or Flan-T5</b> to initialize the policy model.
                         <br /><br/>
@@ -299,6 +299,9 @@
             <div class="column has-text-centered is-fifths-fifths">
               <div class="item">
                 <h2 class="subtitle;"><b>2. Dialogue Response Generation</b><br/><br/></h2>
+                <p>Current LLM-based chatbots such as ChatGPT and Claude are typically targeted at open-domain conversations while struggling with <b>task-oriented (goal-oriented) dialogues</b> where they need to assist users in completing specific goals or tasks, such as making reservations or ordering food. 
+                  Unlike open-domain conversations, task-oriented dialogues often require the chatbot to follow task-specific business logic and respond based on reliable information from API calls or database queries.
+                  To address this limitation, we train the policy model to generate <b>dialogue acts</b>, which are used to guide the LLMs in generate reliable system responses that assist users in completing tasks and goals.</p>
                 <!-- Your image here -->
                 <img src="static/images/table1.png" alt="table1.png" />
                 <h2 class="subtitle;columns is-centered">
@@ -310,11 +313,7 @@
           </div>      
           <div class="column is-fifths-fifths">
             <p style="margin-left: 2em;margin-right: 2em;"><br /> 
-              <p>There has been a rise in LLM-based chatbots such as ChatGPT, Claude, etc. However, these chatbots are typically targeted at open-domain conversations while struggling with <b>task-oriented (goal-oriented) dialogues</b> where they need to assist users in completing specific goals or tasks, such as making reservations or ordering food. 
-              Unlike open-domain conversations, task-oriented dialogues often require the chatbot to follow task-specific business logic and respond based on reliable information from API calls or database queries.
-              To address this limitation, we train the policy model to generate <b>dialogue acts</b>, which are used to guide the LLMs in generate reliable system responses that assist users in completing tasks and goals.</p>
-              From Table 1 we can see that our approach DSP significantly improves the
-              success and inform rates of Codex and ChatGPT, even with only 80 dialogues, 
+              From Table 1 we can see that our approach DSP significantly improves the success and inform rates of Codex and ChatGPT, even with only 80 dialogues, 
               surpassing several fully trained TOD models, particularly in terms of Success and Inform rates.</p>
               <br/>
             </p>
