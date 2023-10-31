@@ -310,22 +310,12 @@
           </div>      
           <div class="column is-fifths-fifths">
             <p style="margin-left: 2em;margin-right: 2em;"><br /> 
-              <p>There has been a rise in LLM-based chatbots such as ChatGPT, Claude, etc. However, these chatbots are typically targeted at open-domain conversations to engage with users on a wide range of topics without a specific goal in mind. 
-              However, these chatbots still face challenges in handling <b>task-oriented (goal-oriented) dialogues</b> where they need to assist users in completing specific goals or tasks, such as making reservations or ordering food. 
+              <p>There has been a rise in LLM-based chatbots such as ChatGPT, Claude, etc. However, these chatbots are typically targeted at open-domain conversations while struggling with <b>task-oriented (goal-oriented) dialogues</b> where they need to assist users in completing specific goals or tasks, such as making reservations or ordering food. 
               Unlike open-domain conversations, task-oriented dialogues often require the chatbot to follow task-specific business logic and respond based on reliable information from API calls or database queries.
-              To address this limitation, we train the policy model to generate <b>dialogue actions</b>, which are used to guide the LLMs in generate reliable system responses that assist users in completing tasks.</p>
-              
-              Table 1 summarizes our results, from which we obtain the following observations: <br/><br/><b>(1)</b> Our approach DSP significantly improves the
-              success and inform rates of Codex and ChatGPT, indicating that they better understand the scenario
-              and generate appropriate responses that help users in completing their tasks. <br/><br/><b>(2)</b> There is no
-              improvement in the corpus-level BLEU score, possibly because the LLMs generate responses with
-              different speaking styles and vocabulary since they do not see oracle system responses. Nevertheless,
-              the high success and inform rates demonstrate the usefulness of our approach in delivering helpful and
-              reliable responses. <br/><br/><b>(3)</b> RL training encourages the policy model to explore more
-              model-preferred stimulus, while supervised fine-tuning may merely generate stimulus closely aligned
-              with the pseudo-labeled data, which is not necessarily optimal. <br/><br/><b>(4)</b> Our approach achieves notable
-              success with only 80 dialogues, surpassing several fully trained TOD models, particularly in terms
-              of Success and Inform rates.</p>
+              To address this limitation, we train the policy model to generate <b>dialogue acts</b>, which are used to guide the LLMs in generate reliable system responses that assist users in completing tasks and goals.</p>
+              From Table 1 we can see that our approach DSP significantly improves the
+              success and inform rates of Codex and ChatGPT, even with only 80 dialogues, 
+              surpassing several fully trained TOD models, particularly in terms of Success and Inform rates.</p>
               <br/>
             </p>
           </div>
