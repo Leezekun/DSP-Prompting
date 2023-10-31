@@ -20,7 +20,7 @@
   <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
   <meta name="twitter:card" content="summary_large_image">
   <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="guiding, large languange models, directional stimulus prompting">
+  <meta name="keywords" content="guiding, large language models, directional stimulus prompting, prompt optimization, prompting engineering, hint prompting">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
@@ -62,15 +62,15 @@
               <span class="author-block">
                 <a href="https://leezekun.github.io/" target="_blank">Zekun Li</a><sup>1*</sup>,</span>
                 <span class="author-block">
-                  <a href="https://www.linkedin.com/in/baolin-peng-6299266b/" target="_blank">Baolin Peng</a><sup>2</sup>,</span>
+                  <a href="https://scholar.google.com/citations?user=u1CNjgwAAAAJ&hl=en&oi=ao" target="_blank">Baolin Peng</a><sup>2</sup>,</span>
                   <span class="author-block">
-                    <a href="https://www.linkedin.com/in/pengcheng-he-42163729/" target="_blank">Pengcheng He</a><sup>2</sup>,</span>
+                    <a href="https://scholar.google.com/citations?user=TS1RoxAAAAAJ&hl=en" target="_blank">Pengcheng He</a><sup>2</sup>,</span>
                     <span class="author-block">
-                      <a href="https://www.linkedin.com/in/michelgalley/" target="_blank">Michel Galley</a><sup>2</sup>,</span>
+                      <a href="https://scholar.google.com/citations?hl=en&user=rs1M7CAAAAAJ" target="_blank">Michel Galley</a><sup>2</sup>,</span>
                       <span class="author-block">
-                        <a href="https://www.linkedin.com/in/jianfeng-gao-2558165/" target="_blank">Jianfeng Gao</a><sup>2†</sup>,</span>
+                        <a href="https://scholar.google.com/citations?user=CQ1cqKkAAAAJ&hl=en&oi=ao" target="_blank">Jianfeng Gao</a><sup>2†</sup>,</span>
                         <span class="author-block">
-                      <a href="https://www.linkedin.com/in/xifeng-yan-b866119/" target="_blank">Xifeng Yan</a><sup>1†</sup>
+                      <a href="https://scholar.google.com/citations?user=XZV2eogAAAAJ&hl=en" target="_blank">Xifeng Yan</a><sup>1†</sup>
                   </span>
                   </div>
 
@@ -78,8 +78,8 @@
                     <span class="author-block">University of California, Santa Barbara<br>Microsoft</span><br>37th Conference on Neural Information Processing Systems (NeurIPS 2023)</span>
                     <span class="eql-cntrb"><small><br>{zekunli, xyan}@cs.ucsb.edu</small></span>
                     <span class="eql-cntrb"><small><br>{bapeng,penhe,mgalley,jfgao}@microsoft.com</small></span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Part of the work was done when Zekun Li was interning at Microsoft Research.</small></span>
-                    <span class="eql-cntrb"><small><br><sup>†</sup>Co-advise on this work.</small></span>
+                    <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Part of the work was done when Zekun Li was interning at Microsoft Research.</small></span> -->
+                    <!-- <span class="eql-cntrb"><small><br><sup>†</sup>Co-advise on this work.</small></span> -->
                   </div>
 
                   <div class="column has-text-centered">
@@ -135,7 +135,7 @@
                       <!-- Your image here -->
                       <img src="static/images/example_v2.jpg" alt="Comparison of our Directional Stimulus Prompting and the standard prompting method using LLMs such as ChatGPT for the summarization task." />
                       <h2 class="subtitle;columns is-centered">
-                          Figure 1: Comparison of our Directional Stimulus Prompting and the standard prompting method using LLMs such as ChatGPT for the summarization task. DSP utilizes directional stimulus/hints (highlighted in orange), which are keywords in this case, to provide instance-specific guidance to LLMs in generating summaries (highlighted in blue) that better align with the desired reference summary with higher ROUGE scores or other measures like human preferences.
+                          Figure 1: Comparison of our Directional Stimulus Prompting and the standard prompting method using LLMs such as ChatGPT for the summarization task. DSP introduces an auxiliary <b>directional stimulus prompts, i.e., hints</b> (highlighted in orange), which are keywords in this case, to provide instance-specific guidance to LLMs in generating summaries (highlighted in blue) that better align with the desired reference summary with higher ROUGE scores or other measures like human preferences.
                       </h2>
                   </div>
               </div>
@@ -153,26 +153,15 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We introduce Directional Stimulus Prompting, a novel framework for guiding
-black-box large language models (LLMs) toward specific desired outputs. Instead
-of directly adjusting LLMs, our method employs a small tunable policy model (e.g.,
-T5) to generate an auxiliary directional stimulus prompt for each input instance.
-These directional stimulus prompts act as nuanced, instance-specific hints and clues
-to guide LLMs in generating desired outcomes, such as including specific keywords
-in the generated summary. Our approach sidesteps the challenges of direct LLM
-tuning by optimizing the policy model to explore directional stimulus prompts that
-align LLMs with desired behaviors. The policy model can be optimized through
-1) supervised fine-tuning using labeled data and 2) reinforcement learning from
-offline or online rewards based on the LLM’s output. We assess our method across
-summarization, dialogue response generation, and chain-of-thought reasoning tasks.
-Our experiments demonstrate that the framework consistently improves LLMs’
-(e.g., ChatGPT, Codex, InstructGPT) performance on these supervised tasks using
-minimal labeled data. Notably, using just 80 dialogues on the MultiWOZ dataset,
-our approach enhances ChatGPT’s performance by an impressive 41.4%, matching
-or surpassing some fully supervised start-of-the-art models. Additionally, the
-instance-specific chain-of-thought prompt generated by our approach improves
-InstructGPT’s reasoning accuracy compared to human-crafted or automatically
-generated prompts. The code and data are publicly available.
+            We introduce Directional Stimulus Prompting, a novel framework for guiding black-box large language models (LLMs) toward specific desired outputs. 
+            Instead of directly adjusting LLMs, our method employs a small tunable policy model (e.g., T5) to generate an <b>auxiliary directional stimulus prompt</b> for each input instance. 
+            These directional stimulus prompts act as <b>nuanced, instance-specific hints and clues</b> to guide LLMs in generating desired outcomes, such as including specific keywords in the generated summary. 
+            Our approach sidesteps the challenges of direct LLM tuning by optimizing the policy model to explore directional stimulus prompts that align LLMs with desired behaviors. 
+            The policy model can be optimized through 1) <b>supervised fine-tuning</b> using labeled data and 2) <b>reinforcement learning</b> from offline or online rewards based on the LLM's output. 
+            We assess our method across <b>summarization</b>, <b>dialogue response generation</b>, and <b>chain-of-thought reasoning</b> tasks. 
+            Our experiments demonstrate that the framework consistently improves LLMs' (e.g., ChatGPT, Codex, InstructGPT) performance on these supervised tasks using minimal labeled data. 
+            Notably, using just 80 dialogues on the MultiWOZ dataset, our approach enhances ChatGPT's performance by an impressive 41.4%, matching or surpassing some fully supervised start-of-the-art models. 
+            Additionally, the instance-specific chain-of-thought prompt generated by our approach improves InstructGPT's reasoning accuracy compared to human-crafted or automatically generated prompts, showcasing its effectiveness as a <b>prompt optimization</b> approach.
           </p>
         </div>
       </div>
@@ -228,9 +217,10 @@ generated prompts. The code and data are publicly available.
                 <h2 style:"text-align: center;" class="title is-3">Experiments</h2><br />
                   <div class="item">
                       <h2 class="subtitle;columns is-centered">
-                        In this work, we focus on the summarization, dialogue response generation, and automatic prompt generation tasks.
-                        We mainly use pre-trained T5 or Flan-T5 to initialize the policy model and evaluate the OpenAI’s ChatGPT (gpt-3.5-turbo), 
-                        Codex (code-davinci-002), and InstructGPT (text-davinci-002).<br /><br/>
+                        Our framework can be flexibly applied to into various tasks and LMs.
+                        In this work, we spotlight its utility by focusing on three key applications: <b>summarization</b>, <b>dialogue response generation</b>, and <b>chain-of-thought reasoning/b>, which encompasses <b>automatic prompt engineering/optimization</b>.
+                        We experiment with the black-box LLMs including <b>OpenAI’s ChatGPT (gpt-3.5-turbo), Codex (code-davinci-002), and InstructGPT (text-davinci-002)</b>, and use pre-trained <b>T5 or Flan-T5</b> to initialize the policy model.
+                        <br /><br/>
                       </h2>
                       <h2 class="subtitle;"><b>1. Summarization</b><br/><br/></h2>
                       <!-- Your image here -->
@@ -243,15 +233,9 @@ generated prompts. The code and data are publicly available.
               </div>
           </div>
           <div class="column is-fifths-fifths">
-            <p style="margin-left: 2em;margin-right: 2em;"><br />We evaluate the performance of ChatGPT with standard prompting and our approach DSP
-              trained with SFT or SFT and then RL (SFT+RL) on varying sizes of training data and present the results in Figure 3. As can be seen, all 
-              the evaluation scores improve with our proposed DSP compared with standard prompting. Specifically, the supervised fine-tuned policy 
-              model generates the stimulus that effectively guides ChatGPT to generate summaries that closely align with the reference summaries, leading 
-              to improved benchmark performance. Furthermore, the additional fine-tuning of the policy model with RL results in further performance 
-              improvement, indicating the effectiveness of RL in exploring better directional stimulus that maximizes the reward. As the size of the 
-              training data increases, the performance improvement becomes more significant. Despite using a small collection of only 1,000 to 4,000 
-              samples to keep API usage costs low, our DSP approach still consistently enhances ChatGPT’s ROUGE, BLEU, and Meteor scores by 1-2 points, 
-              even though ChatGPT has already achieved considerable performance.</p>
+            <p style="margin-left: 2em;margin-right: 2em;"><br />All the evaluation scores improve with our proposed DSP compared with standard prompting. 
+              Supervised fine-tuning (SFT) improves the benchmark performance, while additional <b>RL</b> results in further performance improvement, as it effectively encourages the policy model to explore better directional stimulus that maximizes the reward. 
+              Despite using a small collection of only 1,000 to 4,000 samples to keep API usage costs low, our DSP approach still consistently enhances ChatGPT’s ROUGE, BLEU, and Meteor scores,  even though ChatGPT has already achieved considerable performance.</p>
               <br/>
             </p>
         </div>
@@ -270,13 +254,9 @@ generated prompts. The code and data are publicly available.
             </div>
         </div>
         <div class="column is-fifths-fifths">
-          <p style="margin-left: 2em;margin-right: 2em;"><br />However, due to the discrepancy between
-            the semantic-based metric BERTScore and the overlap-based metric ROUGE, which are used as the
-            reward, the improvement in BERTScore after RL training may be relatively less significant. Figure 4
-            presents the change of training rewards and ROUGE-1 score on the validation set during the training
-            process on 1,000 samples. We can see that the performance is closely related to the training rewards,
-            and the training is relatively stable using the NLPO algorithm.<br/><br/>
-               To gain a better understanding of generated summaries guided by keywords, we employed <b>GPT-4</b> to evaluate 
+          <p style="margin-left: 2em;margin-right: 2em;"><br />Figure 4 presents the change of training rewards and ROUGE-1 score on the validation set during the training
+            process on 1,000 samples. We can see that the performance is closely related to the training rewards, and the training is relatively stable using the NLPO algorithm.<br/><br/>
+            To gain a better understanding of generated summaries guided by keywords, we employed <b>GPT-4</b> to evaluate 
             the summaries. <br/>
             </p>
           </p>
@@ -292,7 +272,7 @@ generated prompts. The code and data are publicly available.
                     <h2 class="subtitle;columns is-centered">
                       Figure 5: GPT-4 evaluation on comparing the summaries generated with our approach DSP, 
                       i.e., with the guidance of our generated keywords, and the original standard prompting, 
-                      i.e., without keyword guidance.
+                      i.e., without keyword hint guidance.
                     </h2>
                 </div>
             </div>
@@ -389,17 +369,12 @@ generated prompts. The code and data are publicly available.
         <h2 class="title is-3">Conclusions and Future Work</h2>
         <div class="content has-text-justified">
           <p>
-            In this paper, we introduce Directional Stimulus Prompting (DSP), a new prompting framework
-to provide black-box LLMs with fine-grained and instance-specific guidance toward the desired
-outputs. We use a tunable policy model to generate the directional stimulus to provide such guidance
-and convert the optimization of black-box LLMs to that of the policy model. Experimental results
-demonstrate the effectiveness of our approach. DSP not only enables better control and guidance
-for black-box LLMs, but also effectively utilizes labeled data. Furthermore, the generated stimulus
-provides valuable insights and interpretations of LLMs’ behaviors. In this work, we use heuristically
-selected or annotated pseudo-stimulus data for supervised fine-tuning of the policy model. For future
-work, we hope to explore the possibility of using a “machine language” between the policy model
-and the LLMs that might not be intuitively preferred by humans but can better convey guidance
-information, as well as other forms of directional stimulus beyond text.
+            In this paper, we introduce <b>Directional Stimulus Prompting (DSP)</b>, a new prompting framework to provide black-box LLMs with fine-grained and instance-specific guidance toward the desired outputs.
+We use a tunable policy model to generate the directional stimulus to provide such guidance and convert the optimization of black-box LLMs to that of the policy model.
+Experimental results demonstrate the effectiveness of our approach in controlling and guiding black-box LLMs via automatic prompt engineering and optimization. 
+Furthermore, the generated stimulus provides valuable insights and interpretations of LLMs' behaviors.
+In this work, we use heuristically selected or annotated pseudo-stimulus data for supervised fine-tuning of the policy model. 
+For future work, we hope to explore the possibility of using a “machine language” between the policy model and the LLMs that might not be intuitively preferred by humans but can better convey guidance information, as well as other forms of directional stimulus beyond text.
           </p>
         </div>
       </div>
