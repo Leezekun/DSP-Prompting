@@ -303,11 +303,58 @@
                   Unlike open-domain conversations, task-oriented dialogues often require the chatbot to follow task-specific business logic and respond based on reliable information from API calls or database queries.
                   To address this limitation, we train the policy model to generate <b>dialogue acts</b>, which are used to guide the LLMs in generate reliable system responses that assist users in completing tasks and goals.</p>
                 <!-- Your image here -->
-                <img src="static/images/table1.png" alt="table1.png" />
+                <!-- <img src="static/images/table1.png" alt="table1.png" />
                 <h2 class="subtitle;columns is-centered">
                   Table 1: Response generation performance of different methods on the MultiWOZ 2.0&2.1 datasets, 
                   where Succ. and Comb. denote the Success and Combined Score metrics, respectively.
-                </h2>
+                </h2> -->
+                <div class="caption">Response generation performance of different methods on the MultiWOZ 2.0&amp;2.1 datasets, where Succ. and Comb. denote the Success and Combined Score metrics, respectively.</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th rowspan="2"><b>Method</b></th>
+                            <th rowspan="2"><b>#Training data</b></th>
+                            <th colspan="4">MultiWOZ 2.0</th>
+                            <th colspan="4">MultiWOZ 2.1</th>
+                        </tr>
+                        <tr>
+                            <th>Inform</th>
+                            <th>Succ.</th>
+                            <th>BLEU</th>
+                            <th>Comb.</th>
+                            <th>Inform</th>
+                            <th>Succ.</th>
+                            <th>BLEU</th>
+                            <th>Comb.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="gray">
+                            <td colspan="10"><i><b>Codex</b></i></td>
+                        </tr>
+                        <tr>
+                            <td>Standard Prompting</td>
+                            <td>-</td>
+                            <td>76.7</td>
+                            <td>41.5</td>
+                            <td>7.7</td>
+                            <td>66.8</td>
+                            <td>74.2</td>
+                            <td>41.9</td>
+                            <td>7.8</td>
+                            <td>65.9</td>
+                        </tr>
+                        <!-- ... Add all the other rows in a similar fashion ... -->
+                        <tr class="gray">
+                            <td colspan="10"><i><b>ChatGPT</b></i></td>
+                        </tr>
+                        <!-- ... Add all the other rows for ChatGPT ... -->
+                        <tr class="gray">
+                            <td colspan="10"><i><b>Fully supervised TOD models</b></i></td>
+                        </tr>
+                        <!-- ... Add all the other rows for Fully supervised TOD models ... -->
+                    </tbody>
+                </table>
               </div>
             </div>
           </div>      
